@@ -14,4 +14,5 @@ public interface PedidoService {
     public List<Pedido> findAll();
     public Pedido create(List<Long> articulosId);
     public void delete(Long id);
+    public Pedido update(Pedido pedido);
 }

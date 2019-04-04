@@ -54,5 +54,10 @@ public class PedidoServiceImpl implements PedidoService {
         Optional<Pedido> pedido = pedidoRepository.findById(id);
         pedidoRepository.delete(pedido.get());
     }
+
+    @Override
+    public Pedido update(Pedido pedido) {
+        return pedidoRepository.save(pedido);
+    }
     
 }

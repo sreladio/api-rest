@@ -1,5 +1,6 @@
 package com.eladio.pedidos.app;
 
+import com.eladio.pedidos.config.SecurityConfig;
 import com.eladio.pedidos.config.SwaggerConfig;
 
 import org.springframework.boot.SpringApplication;
@@ -12,8 +13,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan({"com.eladio.pedidos.model"})
 @EnableJpaRepositories({"com.eladio.pedidos.repository"})
-@ComponentScan({"com.eladio.pedidos.service", "com.eladio.pedidos.rest"})
-@Import(SwaggerConfig.class)
+@ComponentScan({"com.eladio.pedidos.security", "com.eladio.pedidos.service", "com.eladio.pedidos.rest"})
+@Import({SwaggerConfig.class, SecurityConfig.class})
 public class DemoApplication {
 
 	public static void main(String[] args) {
